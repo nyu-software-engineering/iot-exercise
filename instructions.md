@@ -11,7 +11,7 @@ The Internet of Things (IoT) is the network of connected physical and virtual de
 The IoT client device will be built using a [Raspberry Pi](https://www.raspberrypi.com/) and any additional hardware of your choice, with custom programs written primarily in Python.
 
 - The client must collect data using one or more hardware sensors, such as camera, microphone, temperature sensor, humidity sensor, proximity sensor, etc.
-- The client must do some form of analysis of the data, such as image recognition, speech recognition, classification, etc, either using third-party APIs or code libraries designed for this purpose.
+- The client must do some form of high-level analysis of the data, such as image recognition, speech recognition, classification, etc, either using custom code, third-party APIs or code libraries designed for this purpose.
 - The collected data must be sent to the IoT server using a REST API.
 
 The IoT server will be built using the Python [flask](https://palletsprojects.com/p/flask/) framework and a [MongoDB](https://www.mongodb.com/) database connected via [pymongo](https://pymongo.readthedocs.io/en/stable/), continuously deployed to a web server hosted with [Digital Ocean](https://m.do.co/c/4d1066078eb0) (note that this link includes a referral code that will give you $200 of credit, which is more than enough to cover this project. Just remember to cancel your account once the project is over to avoid being charged when the credit expires).
