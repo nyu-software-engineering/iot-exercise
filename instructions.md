@@ -40,7 +40,54 @@ The IoT server will be built using the Python [flask](https://palletsprojects.co
 
 ## Developer workflow
 
+### Task boards
+
+ALl teams must use task boards to manage their work.
+
+- The task boards must have at least 4 columns: "To Do", "In Progress", "Awaiting Review", "Done".
+- Each task must be assigned to the developer(s) responsible for implementing it.
+- Each task must be positioned on the board in the appropriate column representing its status.
+
+### Standup meetings
+
+Each team must have at least 3 standup meetings per week. In these meetings, each developer must answer three questions:
+
+- what have you done since last meeting?
+- what are you working on now?
+- is anything blocking your way?
+
+One team member must collect the answers each team member gave to each of these questions and post a report of the standup to the team's communication channel. For example:
+
+```
+Standup Report - January 24 2023
+--------------------------------
+
+Flora Rosenkrist @florarose
+- did: implement upload picture functionality for upload item page fixed formatting of upload item page
+- doing: figure out edit profile info not filling in
+- blockers: none
+
+Chad Mugabe @chmug
+- did: finished saved posts and past uploads, resolved conflict and merged past uploads branch
+- doing: add box headings to both pages, figure out background colour issue on user profile, edit profile pages
+- blockers: none
+
+Trish McPerson @tmcfer
+- did: finished user and edit profile
+- doing: working on the background issue
+- blockers: studying for a midterm till Saturday
+
+Pat Sachin @patsach
+- did: map page, merged trish's pull request. refactored background code and centered stuff on saved posts and upload.
+- doing: map popup, map api integration
+- blockers: none
+```
+
+### Individual contributions
+
 All team members must have visibly contributed to the code using their own git & GitHub accounts in order to claim that they contributed to the project.
+
+### Feature branch workflow
 
 All code changes must be done in feature branches and not directly in the `main` branch.
 
