@@ -4,25 +4,39 @@ Build an Internet of Things device.
 
 ## Concept
 
-The Internet of Things (IoT) is the network of connected physical and virtual devices that communicate with one-another. Often envisioned as "smart devices" -- from smart toasters to self-driving cars -- that can sense and respond to their usage, internal state, and external environment, IoT devices are often used to collect data and automate tasks. In this exercise, we will build an IoT device that senses its environment, reports the data it collects to a central server which provides a web dashboard through which users can visualize the data.
+The Internet of Things (IoT) is the network of connected physical and virtual devices that communicate with one-another. Often envisioned as "smart devices" -- from smart toasters to home lighting systems to self-driving cars -- IoT devices can sense and respond to their usage, internal state, and external environment. They are often used to collect data and automate tasks.
+
+In this exercise, we will build an IoT device that senses its environment, reports the data it collects to a central server which provides a web dashboard through which users can visualize the data.
 
 ## Requirements
 
+The system you will build consists of two independent software sub-systems. Both parts of this project must be stored in this "monorepo" - a single version control repository housing multiple independent subsystems of a single software project.
+
+- client device
+- server
+
+A starter `.gitignore` file has been provided for generic Python programming. However, this should be updated as necessary to make sure that any 3rd-party Python modules or dependencies used by the client or server of this project are not included in version control. Use `pip` or `pipenv` to document and install any 3rd-party Python software dependencies for both parts independently.
+
+### Client device
+
 The IoT client device will be built using a [Raspberry Pi](https://www.raspberrypi.com/) and any additional hardware of your choice, with custom programs written primarily in Python.
 
-- The client must collect data using one or more hardware sensors, such as camera, microphone, temperature sensor, humidity sensor, proximity sensor, etc.
-- The client must do some form of high-level analysis of the data, such as image recognition, speech recognition, classification, etc, either using custom code, third-party APIs or code libraries designed for this purpose.
-- The collected data must be sent to the IoT server using a [REST API](https://pythonbasics.org/flask-rest-api/) created with flask routes. Data in the body of any request or response between client and server must be formatted as [JSON](https://en.wikipedia.org/wiki/JSON).
+- The client device must collect data using one or more hardware sensors, such as camera, microphone, temperature sensor, humidity sensor, proximity sensor, etc.
+- The client device must do some form of high-level analysis of the data, such as image recognition, speech recognition, classification, aggregation, etc, either using custom code, third-party APIs or code libraries designed for this purpose. In other words, the client device must not only collect raw data, but also must compute the results of some additional analysis of that data.
+- The collected data, including the results of any analysis performed, must be sent to the IoT server using a [RESTful API](https://pythonbasics.org/flask-rest-api/) created with `flask` routes. How frequently the client communicates with the server must make sense for your application.
+- Data in the body of any request or response between client and server must be formatted as [JSON](https://en.wikipedia.org/wiki/JSON) - typically either an array of objects or a single object, depending on the need.
+- Unit tests using [pytest](https://docs.pytest.org/en/7.2.x/) must be written for the client device code that provide at least 50% code coverage of the client code.
+- The client must have a Continuous Integration (CI) workflow using [GitHub Actions](https://github.com/features/actions) that automatically builds and tests the updated client subsystem every time a pull request is approved and code is merged into the `main` branch.
+
+See some setup instructions and helpful resources for the Raspberry Pi in the [./pi-setup.md](./pi-setup.md) file.
+
+### Server
 
 The IoT server will be built using the Python [flask](https://palletsprojects.com/p/flask/) framework and a [MongoDB](https://www.mongodb.com/) database connected via [pymongo](https://pymongo.readthedocs.io/en/stable/), continuously deployed to a web server hosted with [Digital Ocean](https://m.do.co/c/4d1066078eb0) (note that this link includes a referral code that will give you $200 of credit, which is more than enough to cover this project. Just remember to cancel your account once the project is over to avoid being charged when the credit expires).
 
-- The IoT server must store the data received in a database and provide a web dashboard for users to visualize the data.
-- Unit tests using [pytest](https://docs.pytest.org/en/7.2.x/) and [pytest-flask](https://pytest-flask.readthedocs.io/en/latest/) must be written for the server code that provide at least 50% code coverage.
-- The IoT server must have a Continuous Integration / Continuous Deployment (CI/CD) workflow using [GitHub Actions](https://github.com/features/actions) that automatically deploys the updated server as a Docker container every time a pull request is approved and code is merged into the main branch.
-
-Both parts of this project must be stored in this "monorepo" - a single repository housing multiple independent subsystems of a single software project.
-
-A starter `.gitignore` file has been provided. However, this should be updated as necessary to make sure that any 3rd-party Python modules or subsystems used by this proejct are not included in version control for this project. Use `pip` or `pipenv` to document and install any 3rd-party Python software dependencies.
+- The server must store the data received in a database and provide a web dashboard for users to visualize the data.
+- Unit tests using `pytest`and [pytest-flask](https://pytest-flask.readthedocs.io/en/latest/) must be written for the server code that provide at least 50% code coverage of the server code.
+- The server must have a Continuous Integration / **Continuous Deployment** (CI/**CD**) workflow using [GitHub Actions](https://github.com/features/actions) that automatically builds, tests, and deploys the updated server subsystem every time a pull request is approved and code is merged into the `main` branch.
 
 ## Developer workflow
 
