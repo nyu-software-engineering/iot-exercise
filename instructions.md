@@ -12,7 +12,7 @@ The IoT client device will be built using a [Raspberry Pi](https://www.raspberry
 
 - The client must collect data using one or more hardware sensors, such as camera, microphone, temperature sensor, humidity sensor, proximity sensor, etc.
 - The client must do some form of high-level analysis of the data, such as image recognition, speech recognition, classification, etc, either using custom code, third-party APIs or code libraries designed for this purpose.
-- The collected data must be sent to the IoT server using a REST API.
+- The collected data must be sent to the IoT server using a [REST API](https://pythonbasics.org/flask-rest-api/) created with flask routes. Data in the body of any request or response between client and server must be formatted as [JSON](https://en.wikipedia.org/wiki/JSON).
 
 The IoT server will be built using the Python [flask](https://palletsprojects.com/p/flask/) framework and a [MongoDB](https://www.mongodb.com/) database connected via [pymongo](https://pymongo.readthedocs.io/en/stable/), continuously deployed to a web server hosted with [Digital Ocean](https://m.do.co/c/4d1066078eb0) (note that this link includes a referral code that will give you $200 of credit, which is more than enough to cover this project. Just remember to cancel your account once the project is over to avoid being charged when the credit expires).
 
