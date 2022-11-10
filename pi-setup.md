@@ -10,6 +10,7 @@ The instructions in this video outline the basic headless setup: [Headless Raspb
 - Set the hostname to `pi_team_<team number>.local`, e.g. `pi_team_4.local` if you are on team #4.
 - Set the username to `pi`.
 - Set the password to `<team number>_team_pi`, e.g. `4_team_pi` if you are on team #4.
+- If possible, create a wifi hotspot on your phone and configure the wireless LAN to connect to that. Alternatively, it _may_ be possible to connect the device to an NYU wifi network using a student's NYU credentials. Set the WiFi country to `US`.
 - If using Windows, note that either Windows 10 Terminal or Git Bash or Windows Subsystem for Linux (WSL) are recommended for running the `ssh` command, rather than using the PuTTY application.
 - Once the Pi is set up, you can verify that it is online with `ping pi_team_<team number> -n 1` (if a response arrives, it's online!) and connect to it using `ssh pi@pi_team_<team number>` from the command line.
 
