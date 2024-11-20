@@ -10,7 +10,7 @@ In this exercise, we will build an IoT device that senses its environment, repor
 
 ## Requirements
 
-The system you will build consists of two independent software sub-systems. Both parts of this project must be stored in this "monorepo" - a single version control repository housing multiple independent subsystems of a single software project.
+The system you will build consists of two independent software subsystems. Both parts of this project must be stored in this "monorepo" - a single version control repository housing multiple independent subsystems of a single software project.
 
 - client device
 - server
@@ -58,26 +58,29 @@ Each team must have at least 3 standup meetings per week. In these meetings, eac
 
 One team member must collect the answers each team member gave to each of these questions and post a report of the standup to the team's communication channel. For example:
 
-```
-Standup Report - January 24 2023
---------------------------------
+```markdown
+## Standup Report - January 24 2023
 
 Flora Rosenkrist @florarose
+
 - did: implement upload picture functionality for upload item page fixed formatting of upload item page
 - doing: figure out edit profile info not filling in
 - blockers: none
 
 Chad Mugabe @chmug
+
 - did: finished saved posts and past uploads, resolved conflict and merged past uploads branch
 - doing: add box headings to both pages, figure out background colour issue on user profile, edit profile pages
 - blockers: none
 
 Trish McPerson @tmcfer
+
 - did: finished user and edit profile
 - doing: working on the background issue
 - blockers: studying for a midterm till Saturday
 
 Pat Sachin @patsach
+
 - did: map page, merged trish's pull request. refactored background code and centered stuff on saved posts and upload.
 - doing: map popup, map api integration
 - blockers: none
@@ -113,4 +116,4 @@ Replace the contents of the [README.md](./README.md) file with a beautifully-for
 - the names of all teammates as links to their GitHub profiles in the `README.md` file.
 - instructions for how to configure and run all parts of your project for any developer on any platform - these instructions must work!
 - instructions for how to set up any environment variables and import any starter data into the database, as necessary, for the system to operate correctly when run.
-- if there are any "secret" configuration files, such as `.env` or similar files, that are not included in the version control repository, exact instructions for how to create them and what their contents should be must be supplied to the course admins by the due date.
+- if there are any "secret" configuration files, such as `.env` or similar files, that are not included in the version control repository, examples of these files, such as `env.example`, with dummy data must be included in the repository and exact instructions for how to create the proper configuration files and what their contents should be must be supplied to the course admins by the due date.
