@@ -26,7 +26,7 @@ The IoT client device will be built using a [Raspberry Pi](https://www.raspberry
 - The collected data, including the results of any analysis performed, must be sent to the IoT server using a [RESTful API](https://pythonbasics.org/flask-rest-api/) created with `flask` routes. How frequently the client communicates with the server must make sense for your application.
 - Data in the body of any request or response between client and server must be formatted as [JSON](https://en.wikipedia.org/wiki/JSON) - typically either an array of objects or a single object, depending on the need.
 - Unit tests using [pytest](https://docs.pytest.org/en/7.2.x/) must be written for the client device code that provide at least 50% code coverage of the client code.
-- The client must have a Continuous Integration (CI) workflow using [GitHub Actions](https://github.com/features/actions) that automatically builds and tests the updated client subsystem every time a pull request is approved and code is merged into the `main` branch.
+- The client must have a Continuous Integration (CI) workflow using [GitHub Actions](https://github.com/features/actions) that automatically builds and tests the updated client subsystem every time a pull request is approved and code is merged into the `main`/`master` branch.
 
 See some setup instructions and helpful resources for the Raspberry Pi in the [./pi-setup.md](./pi-setup.md) file.
 
@@ -36,7 +36,7 @@ The IoT server will be built using the Python [flask](https://palletsprojects.co
 
 - The server must store the data received in a database and provide a web dashboard for users to visualize the data.
 - Unit tests using `pytest`and [pytest-flask](https://pytest-flask.readthedocs.io/en/latest/) must be written for the server code that provide at least 50% code coverage of the server code.
-- The server must have a Continuous Integration / **Continuous Deployment** (CI/**CD**) workflow using [GitHub Actions](https://github.com/features/actions) that automatically builds, tests, and deploys the updated server subsystem every time a pull request is approved and code is merged into the `main` branch.
+- The server must have a Continuous Integration / **Continuous Deployment** (CI/**CD**) workflow using [GitHub Actions](https://github.com/features/actions) that automatically builds, tests, and deploys the updated server subsystem every time a pull request is approved and code is merged into the `main`/`master` branch.
 
 ## Developer workflow
 
@@ -92,17 +92,17 @@ All team members must have visibly contributed to the code using their own git &
 
 ### Feature branch workflow
 
-All code changes must be done in feature branches and not directly in the `main` branch.
+All code changes must be done in feature branches and not directly in the `main`/`master` branch.
 
-To merge code from a feature branch into the `main` branch, do the following:
+To merge code from a feature branch into the `main`/`master` branch, do the following:
 
-1. Create a pull request from the feature branch to the `main` branch.
+1. Create a pull request from the feature branch to the `main`/`master` branch.
 1. Ask a fellow developer to review your code.
 1. The reviewer must review the code and run unit tests to verify that the functions behave as expepcted.
 1. If the reviewer has any concerns, discuss then and make any changes agreed upon.
-1. Merge the pull request into the `main` branch.
+1. Merge the pull request into the `main`/`master` branch.
 1. Delete the feature branch.
-1. Pull the latest changes from the remote `main` branch to your local `main` branch.
+1. Pull the latest changes from the remote `main`/`master` branch to your local `main`/`master` branch.
 
 **Warning**: the longer you let code sit in a feature branch, the more likely your team is to end up in [merge hell](https://en.wikipedia.org/wiki/Merge_hell). . Merge feature branches into `main` often to avoid this fate.
 
